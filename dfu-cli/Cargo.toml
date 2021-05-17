@@ -1,0 +1,8 @@
+[package]
+name = "dfu-cli"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+dfu-core = { path = "../dfu-core" }
+clap = "2.33.3"

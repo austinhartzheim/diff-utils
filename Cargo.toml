@@ -1,0 +1,12 @@
+[package]
+name = "diff-utils"
+version = "0.1.0"
+edition = "2018"
+
+[workspace]
+members = [
+    "dfu-cli",
+    "dfu-core",
+]
+
+[dependencies]
