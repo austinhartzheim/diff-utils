@@ -43,7 +43,7 @@ pub fn diff_trees<P1: AsRef<Path>, P2: AsRef<Path>>(
         .sort_by(file_name_cmp)
         .into_iter()
         .peekable();
-    let walker2 = WalkDir::new(dir1)
+    let walker2 = WalkDir::new(dir2)
         .min_depth(depth)
         .max_depth(depth)
         .sort_by(file_name_cmp)
