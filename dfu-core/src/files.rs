@@ -1,6 +1,6 @@
 use std::{
     fs::File,
-    io::{self, Read},
+    io::{self, BufReader, Read},
     path::Path,
 };
 
@@ -13,8 +13,8 @@ pub fn file_contents_equal<P1: AsRef<Path>, P2: AsRef<Path>>(
         return Ok(false);
     }
 
-    let mut f1 = File::open(file1)?.bytes();
-    let mut f2 = File::open(file2)?.bytes();
+    let mut f1 = BufReader::new(File::open(file1)?).bytes();
+    let mut f2 = BufReader::new(File::open(file2)?).bytes();
 
     loop {
         match (f1.next(), f2.next()) {
